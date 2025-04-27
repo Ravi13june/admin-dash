@@ -1,9 +1,11 @@
 "use client";
+import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { autoDealershipService } from '@/service/autoDealerShipService';
 import { Checkbox } from '@radix-ui/react-checkbox';
 import { useQuery } from '@tanstack/react-query';
-import { EditIcon, DeleteIcon } from 'lucide-react';
+import { EditIcon, DeleteIcon, Trash2, Plus } from 'lucide-react';
+import Image from 'next/image';
 import React, { useState } from 'react'
 
 const AutoDealerShip = () => {
@@ -35,7 +37,16 @@ const AutoDealerShip = () => {
     const endRange = Math.min(page * pageSize, totalItems);
   return (
     <>
-    <Table>
+     <div className="flex items-center justify-between mb-8">
+        <p className="text-3xl font-bold">Article</p>
+        <div className="flex gap-4">
+          <Button className="bg-[#199FB1] font-bold text-base"><Plus/> Add Auto Dealership</Button>
+          <Button>
+            <Trash2/>
+          </Button>
+        </div>
+      </div>
+    <Table className="shadow-sm bg-white rounded-xl p-8">
       <TableHeader>
         <TableRow>
           <TableHead>
@@ -63,7 +74,7 @@ const AutoDealerShip = () => {
                 <Checkbox />
               </TableCell>
               <TableCell className="font-semibold text-sm">
-                <img src={auto.image} alt={auto.title} width={50} height={50} />
+                <Image src={auto.image} alt={auto.title} width={50} height={50} />
               </TableCell>
               <TableCell className="font-semibold text-sm">{auto.title}</TableCell>
               <TableCell className="font-semibold text-sm">{auto.description

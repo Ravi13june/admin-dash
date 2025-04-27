@@ -14,6 +14,7 @@ import EditIcon from "@/icons/EditIcon";
 import { articleService } from "@/service/articleService";
 import { useQuery } from "@tanstack/react-query";
 import { Delete, Trash2 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 const Article = () => {
@@ -85,12 +86,15 @@ const Article = () => {
                   <Checkbox />
                 </TableCell>
                 <TableCell className="font-semibold text-sm">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    width={50}
-                    height={50}
-                  />
+                 {/* <div> */}
+                 <Image
+                        src={article.image}
+                        alt={article.title}
+                        width={50}
+                        height={50}
+                      />
+                 {/* </div> */}
+                 
                 </TableCell>
                 <TableCell className="font-semibold text-sm">
                   {article.title}
