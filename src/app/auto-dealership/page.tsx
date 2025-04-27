@@ -23,7 +23,6 @@ const AutoDealerShip = () => {
          const autoDealerShip = data?.data|| [];
          const totalItems = data?.data?.totalDocs
          || 0; // Total number of items
-  console.log("autoDealerShip",autoDealerShip);
   
     // Error handling
     if (error instanceof Error) {
@@ -68,7 +67,7 @@ const AutoDealerShip = () => {
             </TableCell>
           </TableRow>
         ) : (
-            autoDealerShip.map((auto: any) => (
+            autoDealerShip.map((auto: { _id: string; image: string ; title: string; description:string }) => (
             <TableRow key={auto._id}>
               <TableCell className="font-semibold">
                 <Checkbox />

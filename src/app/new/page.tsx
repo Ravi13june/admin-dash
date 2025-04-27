@@ -1,5 +1,5 @@
 "use client";
-import Revenue from "@/components/charts/Revenue";
+import RevenueChart from "@/components/charts/Revenue";
 import { SalesDetailsChart } from "@/components/charts/SalesDetails";
 
 const AutoDealerShip = () => {
@@ -94,7 +94,7 @@ const AutoDealerShip = () => {
 
       </div>
       <SalesDetailsChart/>
-      <Revenue/>
+      <RevenueChart/>
     </div>
   );
 }

@@ -2,7 +2,6 @@
 import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import { Header } from "@/components/header";
 import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
 import { ChevronDown, ChevronRight, Search } from "lucide-react";
 import { usePathname } from "next/navigation";

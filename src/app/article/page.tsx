@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -13,9 +14,9 @@ import DeleteIcon from "@/icons/DeleteIcon";
 import EditIcon from "@/icons/EditIcon";
 import { articleService } from "@/service/articleService";
 import { useQuery } from "@tanstack/react-query";
-import { Delete, Trash2 } from "lucide-react";
+import {  Trash2 } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+
 
 const Article = () => {
   const [page, setPage] = useState(1); // Current page
@@ -80,7 +81,7 @@ const Article = () => {
               </TableCell>
             </TableRow>
           ) : (
-            articles.map((article: any) => (
+            articles.map((article: { _id: string; image: string ; title: string;description:string  }) => (
               <TableRow key={article._id}>
                 <TableCell className="font-semibold">
                   <Checkbox />
