@@ -4,7 +4,7 @@ import "./globals.css";
 import Image from "next/image";
 import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
 import { ChevronDown, ChevronRight, Search } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import { navItems } from "@/lib/constant";
@@ -20,8 +20,6 @@ export default function RootLayout({
 }) {
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
   const pathname = usePathname();
-  const router = useRouter()
-  // const pathname = usePathname();
   const isAuthPage = pathname === "/" || pathname.startsWith("/register"); 
   
   const toggleMenu = (name: string) => {

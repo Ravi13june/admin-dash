@@ -7,7 +7,7 @@ import EditIcon from '@/icons/EditIcon';
 import { autoDealershipService } from '@/service/autoDealerShipService';
 import { Checkbox } from '@radix-ui/react-checkbox';
 import { useQuery } from '@tanstack/react-query';
-import { Trash2, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react'
 

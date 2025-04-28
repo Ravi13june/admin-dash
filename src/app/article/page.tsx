@@ -14,7 +14,6 @@ import DeleteIcon from "@/icons/DeleteIcon";
 import EditIcon from "@/icons/EditIcon";
 import { articleService } from "@/service/articleService";
 import { useQuery } from "@tanstack/react-query";
-import {  Trash2 } from "lucide-react";
 import Image from "next/image";
 import Delete from "@/icons/Delete";
 
