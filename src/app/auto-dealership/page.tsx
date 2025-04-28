@@ -1,10 +1,13 @@
 "use client";
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import Delete from '@/icons/Delete';
+import DeleteIcon from '@/icons/DeleteIcon';
+import EditIcon from '@/icons/EditIcon';
 import { autoDealershipService } from '@/service/autoDealerShipService';
 import { Checkbox } from '@radix-ui/react-checkbox';
 import { useQuery } from '@tanstack/react-query';
-import { EditIcon, DeleteIcon, Trash2, Plus } from 'lucide-react';
+import { Trash2, Plus } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react'
 
@@ -39,10 +42,10 @@ const AutoDealerShip = () => {
      <div className="flex items-center justify-between mb-8">
         <p className="text-3xl font-bold">Article</p>
         <div className="flex gap-4">
-          <Button className="bg-[#199FB1] font-bold text-base"><Plus/> Add Auto Dealership</Button>
-          <Button>
-            <Trash2/>
-          </Button>
+          <Button className="bg-[#199FB1] font-bold text-base py-6"><Plus/> Add Auto Dealership</Button>
+          {/* <Button> */}
+          <Delete/>
+          {/* </Button> */}
         </div>
       </div>
     <Table className="shadow-sm bg-white rounded-xl p-8">
@@ -72,16 +75,16 @@ const AutoDealerShip = () => {
               <TableCell className="font-semibold">
                 <Checkbox />
               </TableCell>
-              <TableCell className="font-semibold text-sm">
+              <TableCell className="font-semibold text-sm p-2">
                 <Image src={auto.image} alt={auto.title} width={50} height={50} />
               </TableCell>
               <TableCell className="font-semibold text-sm">{auto.title}</TableCell>
               <TableCell className="font-semibold text-sm">{auto.description
               }</TableCell>
               <TableCell className="flex justify-center items-center gap-4 font-semibold text-sm">
-                <EditIcon />
-                <DeleteIcon />
-              </TableCell>
+                  <EditIcon />
+                  <DeleteIcon />
+                </TableCell>
             </TableRow>
           ))
         )}

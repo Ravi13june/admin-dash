@@ -23,9 +23,10 @@ export function SalesDetailsChart() {
           <h3 className="text-lg font-semibold">Sales Details</h3>
           {/* <p className="text-gray-500">October</p> */}
         </div>
-        <div className="text-right">
-        <p className="text-gray-500">October</p>
-        </div>
+        <select className="border rounded-md px-2 py-1 text-sm">
+            <option>October</option>
+            {/* Add more months if needed */}
+          </select>
       </div>
       
       <div className="h-80">

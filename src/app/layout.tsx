@@ -4,11 +4,12 @@ import "./globals.css";
 import Image from "next/image";
 import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
 import { ChevronDown, ChevronRight, Search } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import { navItems } from "@/lib/constant";
 import { Input } from "@/components/ui/input";
+import BellIcon from "@/icons/BellIcon";
 
 const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
 
@@ -19,7 +20,10 @@ export default function RootLayout({
 }) {
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
   const pathname = usePathname();
-
+  const router = useRouter()
+  // const pathname = usePathname();
+  const isAuthPage = pathname === "/" || pathname.startsWith("/register"); 
+  
   const toggleMenu = (name: string) => {
     setOpenMenus((prev) => ({ ...prev, [name]: !prev[name] }));
   };
@@ -27,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunitoSans.className}>
-        <ReactQueryProvider>
+      { isAuthPage?<>{children}</>: <ReactQueryProvider>
           <div className="min-h-screen flex">
             {/* Fixed Sidebar */}
             <aside
@@ -112,7 +116,7 @@ export default function RootLayout({
             {/* Main Content Area */}
             <div className="flex-1 ml-[436px]">
               {/* Fixed Header */}
-              <header className="fixed top-0 left-[436px] right-0 h-[121px] border-b bg-white z-40">
+              <header className="fixed top-0 left-[436px] right-0 h-[121px] border-b bg-white z-40 pr-20">
                 <div className="flex items-center justify-between h-full px-6">
                   <div className="relative max-w-md w-full">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
@@ -122,14 +126,17 @@ export default function RootLayout({
                       className="w-full pl-10 pr-4 py-2 rounded-lg bg-gray-50"
                     />
                   </div>
+                  
                   <div className="flex items-center gap-4">
-                    <div className="flex flex-col items-end">
+                  <BellIcon/>
+                  <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white ml-10">
+                      KK
+                    </div>
+                    <div className="flex flex-col items-start">
                       <span className="font-medium text-sm">Kalyani Kumar</span>
                       <span className="text-xs text-gray-500">Admin</span>
                     </div>
-                    <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white">
-                      KK
-                    </div>
+                    
                   </div>
                 </div>
               </header>
@@ -153,7 +160,7 @@ export default function RootLayout({
 
             </div>
           </div>
-        </ReactQueryProvider>
+        </ReactQueryProvider>}
       </body>
     </html>
   );

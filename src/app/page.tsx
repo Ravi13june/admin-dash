@@ -1,9 +1,12 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@radix-ui/react-checkbox";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter()
   return (
     <div className=" bg-gray-50 flex items-center justify-center p-4">
     <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
@@ -52,11 +55,13 @@ export default function Home() {
           </Label>
         </div>
 
-        <Button className="w-full" type="submit">
+     
+      </form>
+      <Button className="w-full"  onClick={() => router.push('/dashboard')}>
           Sign In
         </Button>
-      </form>
     </div>
+  
   </div>
   );
 }

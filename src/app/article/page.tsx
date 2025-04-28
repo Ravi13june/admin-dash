@@ -16,6 +16,7 @@ import { articleService } from "@/service/articleService";
 import { useQuery } from "@tanstack/react-query";
 import {  Trash2 } from "lucide-react";
 import Image from "next/image";
+import Delete from "@/icons/Delete";
 
 
 const Article = () => {
@@ -47,28 +48,26 @@ const Article = () => {
   const endRange = Math.min(page * pageSize, totalItems);
   return (
     <>
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-between mb-8 mr-12">
         <p className="text-3xl font-bold">Article</p>
         <div className="flex gap-4">
-          <Button className="bg-[#199FB1] font-bold text-base">Add New Article</Button>
-          <Button>
-            <Trash2/>
-          </Button>
+          <Button className="bg-[#199FB1] font-bold text-base py-6">Add New Article</Button>
+          <Delete/>
         </div>
       </div>
 
-      <Table className="shadow-sm bg-white rounded-xl p-8">
+      <Table className="shadow-sm bg-white rounded-xl p-8 mr-12">
         <TableHeader>
-          <TableRow>
+          <TableRow className="shadow-md py-6">
             <TableHead>
               <Checkbox />
             </TableHead>
-            <TableHead className="font-extrabold text-sm">Image</TableHead>
-            <TableHead className="font-extrabold text-sm">Title</TableHead>
-            <TableHead className="font-extrabold text-sm">
+            <TableHead className="font-extrabold text-sm py-6">Image</TableHead>
+            <TableHead className="font-extrabold text-sm py-6">Title</TableHead>
+            <TableHead className="font-extrabold text-sm py-6">
               Description
             </TableHead>
-            <TableHead className="font-extrabold text-sm text-center">
+            <TableHead className="font-extrabold text-sm text-center py-6">
               Operation
             </TableHead>
           </TableRow>
@@ -82,11 +81,11 @@ const Article = () => {
             </TableRow>
           ) : (
             articles.map((article: { _id: string; image: string ; title: string;description:string  }) => (
-              <TableRow key={article._id}>
+              <TableRow key={article._id} className="py-4">
                 <TableCell className="font-semibold">
                   <Checkbox />
                 </TableCell>
-                <TableCell className="font-semibold text-sm">
+                <TableCell className="font-semibold text-sm py-6">
                  {/* <div> */}
                  <Image
                         src={article.image}
@@ -97,13 +96,13 @@ const Article = () => {
                  {/* </div> */}
                  
                 </TableCell>
-                <TableCell className="font-semibold text-sm">
+                <TableCell className="font-semibold text-sm py-6">
                   {article.title}
                 </TableCell>
-                <TableCell className="font-semibold text-sm">
+                <TableCell className="font-semibold text-sm py-6">
                   {article.description}
                 </TableCell>
-                <TableCell className="flex justify-center items-center gap-4 font-semibold text-sm">
+                <TableCell className="flex justify-center items-center gap-4 font-semibold text-sm py-6">
                   <EditIcon />
                   <DeleteIcon />
                 </TableCell>

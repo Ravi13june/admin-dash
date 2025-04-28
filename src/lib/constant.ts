@@ -19,17 +19,17 @@ import {
 
 export const navItems = [
 
-    { name: "Dashboard", href: "/new", icon: LayoutDashboard },
+    { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
     { name: "Article", href: "/article", icon: Newspaper },
     { name: "Auto dealership", href: "/auto-dealership", icon: RefreshCw },
     {
       name: "Blog",
-      href: "/customers",
+      href: "/blog",
       icon: NotepadText,
       child: [
-        { name: "Blog Category", href: "/dsdf", icon: RefreshCw },
-        { name: "Blog Page", href: "/dsfsdds", icon: RefreshCw },
-        { name: "Blog", href: "/dsdf", icon: RefreshCw },
+        { name: "Blog Category", href: "/blog/dsdf", icon: RefreshCw },
+        { name: "Blog Page", href: "/blog/dsfsdds", icon: RefreshCw },
+        { name: "Blog", href: "/blog/dsdf", icon: RefreshCw },
       ],
     },
     {
@@ -47,16 +47,16 @@ export const navItems = [
       ],
     },
     { name: "Country,State,City", href: "/settings", icon: Cuboid },
-    { name: "FAQ's", href: "/auto-dealership", icon: FileQuestion },
+    { name: "FAQ's", href: "test-1", icon: FileQuestion },
     {
       name: "Free shop news",
-      href: "/customers",
+      href: "/free-shop-news",
       icon: Newspaper,
       child: [
-        { name: "Free Shop News Category", href: "/dsfsdds", icon: Newspaper },
+        { name: "Free Shop News Category", href: "/free-shop-news/news", icon: Newspaper },
         {
           name: "Free Shop News",
-          href: "/dsdf",
+          href: "/free-shop-news/news24",
           icon: Newspaper,
         },
       ],
@@ -69,7 +69,7 @@ export const navItems = [
         { name: "Category", href: "/dsfsdds", icon: MessageCircleQuestion },
         {
           name: "Help Center Knowladge Base",
-          href: "/dsdf",
+          href: "/analytics/dsdf",
           icon: Newspaper,
         },
       ],
@@ -81,68 +81,68 @@ export const navItems = [
       child: [
         {
           name: "Add How It Works",
-          href: "/dsdf",
+          href: "/how-it/dsdf",
           icon: Cog,
         },
         {
           name: "add Buttom Data In HIW",
-          href: "/dsdf",
+          href: "/how-it/dsdf",
           icon: Cog,
         },
       ],
     },
     {
       name: "Jobs",
-      href: "/dashboard",
+      href: "/jobs",
       icon: LayoutDashboard,
       child: [
         {
           name: "Sarvice Category",
-          href: "/dsdf",
+          href: "/jobs/sarvice",
           icon: LayoutDashboard,
         },
         {
           name: "Jobs",
-          href: "/dsdf",
+          href: "/jobs/job",
           icon: LayoutDashboard,
         },
       ],
     },
     {
       name: "Press",
-      href: "/artcicle",
+      href: "/press",
       icon: Tv,
       child: [
         {
-          name: "Press New Category",
-          href: "/dsdf",
+          name: "Press News Category",
+          href: "/press/news-category",
           icon: Tv,
         },
         {
           name: "Press Topic",
-          href: "/dsdf",
+          href: "/press/press-topic",
           icon: Tv,
         },
         {
           name: "Press News",
-          href: "/dsdf",
+          href: "/press/news",
           icon: Tv,
         },
         {
           name: "Press Offer Up News",
-          href: "/dsdf",
+          href: "/press/offer",
           icon: Tv,
         },
         {
           name: "Press",
-          href: "/dsdf",
+          href: "/press/press",
           icon: Tv,
         },
       ],
     },
     {
       name: "Product",
-      href: "/auto-dealership",
+      href: "/product",
       icon: ShoppingBasket,
       child: [
         {
@@ -152,55 +152,55 @@ export const navItems = [
         },
         {
           name: "Sub-Category",
-          href: "/dsdf",
+          href: "/product/sub-category",
           icon: ShoppingBasket,
         },
         {
           name: "Conditions",
-          href: "/dsdf",
+          href: "/product/conditions",
           icon: Newspaper,
         },
         {
           name: "Product",
-          href: "/dsdf",
+          href: "/product/pro",
           icon: LayoutDashboard,
         },
         {
           name: "Brand",
-          href: "/dsdf",
+          href: "/product/Brand",
           icon: LayoutDashboard,
         },
         {
           name: "Model",
-          href: "/dsdf",
+          href: "/product/brand",
           icon: LayoutDashboard,
         },
       ],
     },
     {
       name: "Privacy & Terms",
-      href: "/customers",
+      href: "/privacy-terms",
       icon: NotebookPen,
       
     },
-    { name: "Trust & safety", href: "/analytics",icon:BookCheck ,child: [
+    { name: "Trust & safety", href: "/trust",icon:BookCheck ,child: [
       {
         name: "Add",
-        href: "/dsdf",
+        href: "/trust/add",
         icon: NotebookPen,
       },
       {
         name: "Add Bottom Data",
-        href: "/dsdf",
+        href: "/trust/add-bottom-data",
         icon: LayoutDashboard,
       },
       {
         name: "List",
-        href: "/dsdf",
+        href: "/trust/list",
         icon: NotebookPen,
       },
     ], },
     { name: "User Management", href: "/user-management", icon: UserPen },
-    { name: "Order", href: "/auto-dealership", icon: Package  },
-    { name: "Settings", href: "/customers",icon:Settings   },
+    { name: "Order", href: "/test-3", icon: Package  },
+    { name: "Settings", href: "/settings",icon:Settings   },
   ];
